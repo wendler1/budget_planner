@@ -1,30 +1,56 @@
 "use strict";
 
+let income = 0;
+let outcome = 0;
+let total = 0;
 
 // Get the input from the user
 let title_1 = prompt("title:");
-console.log(`title: ${title_1}`);
 let input_1 = prompt("input (income/expenses):");
-console.log(`input: ${input_1}`);
 let amount_1 = parseInt(prompt("amount (in cent): "));
-console.log(`amount: ${amount_1}`);
 let date_1 = prompt("date (yyyy-mm-dd):");
-console.log(`date: ${date_1}`);
+console.log(`date: ${date_1}
+    input: ${input_1}
+    amount: ${amount_1} ct
+    date: ${date_1}`
+);
+
+if (input_1 === "income") {
+    income = income + amount_1;
+    total = total + amount_1;
+} else if (input_1 === "expenses") {
+    outcome = outcome + amount_1;
+    total = total - amount_1;
+} else {
+    console.log("Please enter income or expenses");
+}
+    
 
 let title_2 = prompt("title:");
-console.log(`title: ${title_2}`);
 let input_2 = prompt("input (income/expenses):");
-console.log(`input: ${input_2}`);
 let amount_2 = parseInt(prompt("amount (in cent): "));
-console.log(`amount: ${amount_2}`);
 let date_2 = prompt("date (yyyy-mm-dd):");
-console.log(`date: ${date_2}`);
+console.log(`date: ${date_2}
+    input: ${input_2}
+    amount: ${amount_2} ct
+    date: ${date_2}`
+);
+
+if (input_2 === "income") {
+    income = income + amount_2;
+    total = total + amount_2;
+} else if (input_2 === "expenses") {
+    outcome = outcome + amount_2;
+    total = total - amount_2;
+} else {
+    console.log("Please enter income or expenses");
+}
 
 // Overall balance
-let income;
-let outcome;
-let total = amount_1 + amount_2;
-console.log(`total: ${total} ct`);
-
 let positive = total >= 0;
-console.log(`positive: ${positive}`);
+
+console.log(`income: ${income} ct
+    outcome: ${outcome} ct
+    total: ${total} ct
+    positive: ${positive}`
+);
