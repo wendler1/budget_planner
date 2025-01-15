@@ -1,62 +1,68 @@
 "use strict";
 
-// // log function
-// const log_it = function() {
-//   console.log('Hello from log_it');
-// }
+// log function
+const log_it = function() {
+  console.log('Hello from log_it');
+}
 
-// log_it();
+log_it();
 
-// // parameter function
-// const para_function = function(a) {
-//   console.log(a);
-// }
+// -----------------------
 
-// para_function(42);
+// parameter function
+const para_function = function(a) {
+  console.log(a);
+}
 
-// // name function
-// const name_function = function(x,y) {
-//     console.log(x + ' ' + y);
-// }
+para_function(42);
 
-// let name = 'John';
-// let surname = 'Doe';
+// -----------------------
 
-// name_function(name,surname);
+// name function
+const name_function = function(x,y) {
+    console.log(x + ' ' + y);
+}
 
-// // math function
-// let bam = 42;
-// let bla = 5;
-// let fu = 277;
-// let tit = 66;
-// let lmao = 33;
+let name_1 = 'John';
+let surname_1 = 'Doe';
 
-// const test = function(t,z) {
-//     console.log(t + z);
-//     console.log(t - z);
-//     console.log(t * z);
-//     console.log(t / z);
-//     console.log(t % z);
-// }
+name_function(name_1,surname_1);
 
-// test(bam,bla);
+// -----------------------
 
+// math function
+let bam = 42;
+let bla = 5;
+let fu = 277;
+let tit = 66;
+let lmao = 33;
 
-// // test default parameter / undefined
+const test = function(t,z) {
+    console.log(t + z);
+    console.log(t - z);
+    console.log(t * z);
+    console.log(t / z);
+    console.log(t % z);
+}
 
-// const greeting = function(surname='Max', name='Mustermann', age=35) {
-//     console.log(`hello ${surname} ${name} you are ${age} yrs old`);
-// }
-// let surname = 'andy';
-// let name = 'mueller';
-// let age = 34;
+test(bam,bla);
 
-// greeting(surname,name,age);
-// greeting(undefined,name,age);
+// -----------------------
 
 
-// return
+// test default parameter / undefined
+const greeting = function(surname='Max', name='Mustermann', age=35) {
+    console.log(`hello ${surname} ${name} you are ${age} yrs old`);
+}
+let surname_2 = 'andy';
+let name_2 = 'mueller';
+let age_2 = 34;
 
+greeting(surname_2,name_2,age_2);
+greeting(undefined,name_2,age_2);
+
+
+// return statments
 const multiplication = function(a, b) {
     return a * b;
 }
@@ -66,3 +72,8 @@ let z_2 = 13;
 
 let result = multiplication(z_1,z_2);
 console.log(result);
+
+// -----------------------
+
+// why writing for a function const instead of let? 
+// both works, but with const you can't ovveride the function somewhere else!!!
