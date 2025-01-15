@@ -18,8 +18,6 @@ const get_information = function () {
     date = prompt("date (yyyy-mm-dd):");
 }
 
-get_information();
-
 
 // show the information as output console
 const show_information = function (title,input,amount,date) {
@@ -29,8 +27,6 @@ amount: ${amount} ct
 date: ${date}`
     );
 }
-
-show_information(title,input,amount,date);
 
 
 // add the information to the total
@@ -46,8 +42,6 @@ const add_information = function (input,amount) {
     }
 }
 
-add_information(input,amount);
-
 
 // show the total balance
 const show_balance = function (income,outcome,total) {
@@ -58,4 +52,17 @@ positive: ${total >= 0}`
     );
 }
 
-show_balance(income,outcome,total);
+
+const entry = function () {
+    get_information();
+    show_information(title,input,amount,date);
+    add_information(input,amount);
+    show_balance(income,outcome,total);
+}
+
+entry();
+entry();
+
+
+
+
