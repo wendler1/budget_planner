@@ -105,3 +105,30 @@ account_nested["balance"] = 2000;
 // ----------------------------------------------------------------
 
 
+/* 7. comparing objects
+
+*/
+
+let car_1 = {
+    brand: "BMW",
+    model: "X5",
+    year: 2020  
+};
+
+let car_2 = {
+    brand: "BMW",
+    model: "X5",
+    year: 2020  
+};
+
+// challange: write a function who compare two objects, and return true if they are equal, otherwise false
+
+function compareObjects(obj1, obj2) {
+    if (obj1['brand'] === obj2['brand'] && obj1['model'] === obj2['model'] && obj1['year'] === obj2['year']) {
+        return true;
+    }else {
+        return false;
+    }
+};
+
+console.log(compareObjects(car_1, car_2));
