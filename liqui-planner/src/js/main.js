@@ -1,68 +1,62 @@
 "use strict";
 
-let income = 0;
-let outcome = 0;
-let total = 0;
-
-let title,
-    input, 
-    amount, 
-    date;
-
-
-// get the input from the user
-const get_information = function () {
-    title = prompt("title:");
-    input = prompt("input (income/expenses):");
-    amount = parseInt(prompt("amount (in cent): "));
-    date = prompt("date (yyyy-mm-dd):");
-}
-
-
-// show the information as output console
-const show_information = function (title,input,amount,date) {
-    console.log(`title: ${title}
-input: ${input}
-amount: ${amount} ct
-date: ${date}`
-    );
-}
-
-
-// add the information to the total
-const add_information = function (input,amount) {
-    if (input === "income") {
-        income = income + amount;
-        total = total + amount;
-    } else if (input === "expenses") {
-        outcome = outcome + amount;
-        total = total - amount;
-    } else {
-        console.log("Please enter income or expenses");
+const budget_book = {
+    total_balance : {
+        income : 0,
+        outcome : 0,
+        total : 0,
+    },
+    new_entry : {
+        title : null,
+        input : null,
+        amount :null,
+        date : null,
+    },
+    // get the input from the user
+    get_information : function () {
+        this.new_entry.title = prompt("title:");
+        this.new_entry.input = prompt("input (income/expenses):");
+        this.new_entry.amount = parseInt(prompt("amount (in cent): "));
+        this.new_entry.date = prompt("date (yyyy-mm-dd):");
+    },
+    // show the information as output console
+    show_information : function () {
+        console.log(`title: ${this.new_entry.title}
+            input: ${this.new_entry.input}
+            amount: ${this.new_entry.amount} ct
+            date: ${this.new_entry.date}`
+                );
+    },
+    // add the information to the total
+    add_information : function () {
+        if (this.new_entry.input === "income") {
+            this.total_balance.income = this.total_balance.income + this.new_entry.amount;
+            this.total_balance.total = this.total_balance.total + this.new_entry.amount;
+        } else if (this.new_entry.input === "expenses") {
+            this.total_balance.outcome = this.total_balance.outcome + this.new_entry.amount;
+            this.total_balance.total = this.total_balance.total - this.new_entry.amount;
+        } else {
+            console.log("Please enter income or expenses");
+        }
+    },
+    // show the total balance
+    show_balance : function () {
+        console.log(`income: ${this.total_balance.income} ct
+            outcome: ${this.total_balance.outcome} ct
+            total: ${this.total_balance.total} ct
+            positive: ${this.total_balance.total >= 0}`
+        );
+    },
+    // add antry
+    add_entry : function () {
+        this.get_information();
+        this.show_information();
+        this.add_information();
+        this.show_balance();
     }
-}
+};
 
-
-// show the total balance
-const show_balance = function (income,outcome,total) {
-    console.log(`income: ${income} ct
-outcome: ${outcome} ct
-total: ${total} ct
-positive: ${total >= 0}`
-    );
-}
-
-
-const entry = function () {
-    get_information();
-    show_information(title,input,amount,date);
-    add_information(input,amount);
-    show_balance(income,outcome,total);
-}
-
-entry();
-entry();
-
+budget_book.add_entry();
 
 
 
