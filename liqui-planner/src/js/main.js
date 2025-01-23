@@ -29,16 +29,35 @@ const budget_book = {
     },
     // add the information to the total
     add_information : function () {
-        if (this.new_entry.input === "income") {
-            this.total_balance.income = this.total_balance.income + this.new_entry.amount;
-            this.total_balance.total = this.total_balance.total + this.new_entry.amount;
-        } else if (this.new_entry.input === "expenses") {
-            this.total_balance.outcome = this.total_balance.outcome + this.new_entry.amount;
-            this.total_balance.total = this.total_balance.total - this.new_entry.amount;
-        } else {
-            console.log("Please enter income or expenses");
+
+        // // else if
+        // if (this.new_entry.input === "income") {
+        //     this.total_balance.income = this.total_balance.income + this.new_entry.amount;
+        //     this.total_balance.total = this.total_balance.total + this.new_entry.amount;
+        // } else if (this.new_entry.input === "expenses") {
+        //     this.total_balance.outcome = this.total_balance.outcome + this.new_entry.amount;
+        //     this.total_balance.total = this.total_balance.total - this.new_entry.amount;
+        // } else {
+        //     console.log("Please enter income or expenses");
+        // }
+
+        // switch 
+        switch (this.new_entry.input) {
+            case "income":
+                this.total_balance.income = this.total_balance.income + this.new_entry.amount;
+                this.total_balance.total = this.total_balance.total + this.new_entry.amount;
+                break;
+            case "expenses":
+                this.total_balance.outcome = this.total_balance.outcome + this.new_entry.amount;
+                this.total_balance.total = this.total_balance.total - this.new_entry.amount;
+                break;
+            default:
+                console.log("Please enter income or expenses");
+                break;
         }
+
     },
+
     // show the total balance
     show_balance : function () {
         console.log(`income: ${this.total_balance.income} ct
