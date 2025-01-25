@@ -17,7 +17,6 @@ let food = [fruits, vegetables, breakfast];
 console.log(food);
 
 // arrays and objects
-
 let cars = [
     {name: "Toyota", year: 2015},
     {name: "BMW", year: 2019},
@@ -25,6 +24,28 @@ let cars = [
 ];
 
 console.log(cars[0].name); // Toyota
+
+
+// Array methods
+let people = ["John", "Jane", "Mary", "Peter"];
+
+// push adds an element to the end of the array
+people.push("Tom");
+console.log(people); // ["John", "Jane", "Mary", "Peter", "Tom"]
+
+// pop removes the last element from the array
+people.pop();
+console.log(people); // ["John", "Jane", "Mary", "Peter"]
+
+// unshift adds an element to the beginning of the array
+people.unshift("Tom");
+console.log(people); // ["Tom", "John", "Jane", "Mary", "Peter"]
+
+// shift removes the first element from the array
+people.shift();
+console.log(people); // ["John", "Jane", "Mary", "Peter"]
+
+
 
 
 
