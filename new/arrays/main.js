@@ -45,6 +45,17 @@ console.log(people); // ["Tom", "John", "Jane", "Mary", "Peter"]
 people.shift();
 console.log(people); // ["John", "Jane", "Mary", "Peter"]
 
+// includes checks if an element exists in the array
+console.log(people.includes("John")); // true
+
+// indexOf returns the index of the element in the array
+console.log(people.indexOf("Jane")); // 1
+
+// lastIndexOf returns the last index of the element in the array
+people.push("Jane");
+console.log(people.lastIndexOf("Jane")); // 4
+
+
 
 
 
