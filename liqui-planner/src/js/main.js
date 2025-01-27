@@ -6,18 +6,16 @@ const budget_book = {
         outcome : 0,
         total : 0,
     },
-    new_entry : {
-        title : null,
-        input : null,
-        amount :null,
-        date : null,
-    },
+    new_entries : [],
+
     // get the input from the user
     get_information : function () {
-        this.new_entry.title = prompt("title:");
-        this.new_entry.input = prompt("input (income/expenses):");
-        this.new_entry.amount = parseInt(prompt("amount (in cent): "));
-        this.new_entry.date = prompt("date (yyyy-mm-dd):");
+        this.new_entries.push({
+            title : prompt("title:"),
+            input : prompt("input (income/expenses):"),
+            amount : parseInt(prompt("amount (in cent): ")),
+            date : prompt("date (yyyy-mm-dd):")
+        });
     },
     // show the information as output console
     show_information : function () {
