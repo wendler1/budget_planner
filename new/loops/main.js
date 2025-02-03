@@ -44,10 +44,18 @@ let food = [
 for (let j = 0; j < food.length; j++) {
     //console.log(`eat ${food[j]}`);
     for (let y = 0; y < food[j].length; y++) {
-        console.log(food[j][y]);
+        // console.log(food[j][y]);
         
     }
 }
+
+// for each
+
+let numbers = [2,55,953,21,745,36];
+
+numbers.forEach(function(a){
+    console.log(a);
+})
 
 
 
