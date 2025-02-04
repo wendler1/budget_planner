@@ -54,9 +54,25 @@ for (let j = 0; j < food.length; j++) {
 let numbers = [2,55,953,21,745,36];
 
 numbers.forEach(function(a){
-    console.log(a);
+    //console.log(a);
 })
 
+// for in (durchläuft Eigenschaften) and for of (durchläuft Werte)
 
+let my_array = ['Peter','Sepp','Depp'];
+
+let my_object = {
+    name : 'Andy',
+    givenname : 'Andreas',
+    age : 34
+};
+
+for (let a in my_array) {
+    console.log(a);
+}
+
+for (let o in my_object) {
+    console.log(o);
+}
 
  
